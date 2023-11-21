@@ -15,7 +15,7 @@ import pandas as pd
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN='6940564392:AAGCSIHPBwTK04pxOtda_IHgAKuqfsyxCh8'
+TOKEN='YOUR_TOKEN'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -64,21 +64,21 @@ def recommend_book(summary, genre, num_books=5):
         genres.append(f"Book: {df['title'][idx]}")
 
     return genres
-
+# Начало диалога с ботом
 @dp.message_handler(commands=['begin'])
 async def start(callback_query: types.CallbackQuery):
     await bot.send_message(
         callback_query.from_user.id,
         text='Добро пожаловать в модель помошник подбора литературы по жанру/описанию!\nДля начала работы введите любой текст',
     )
-
+# Начало диалога с ботом
 @dp.message_handler(commands=['start'])
 async def start(callback_query: types.CallbackQuery):
     await bot.send_message(
         callback_query.from_user.id,
         text='Добро пожаловать в модель помошник подбора литературы по жанру/описанию!\nДля начала работы введите любой текст',
     )
-
+# Функция для ответа на основе обученной модели
 @dp.message_handler()
 async def registration_callback(callback_query: types.Message):
     user_input_text = callback_query.text.split(',')
