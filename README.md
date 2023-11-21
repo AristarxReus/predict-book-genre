@@ -1,6 +1,6 @@
 # predict-book-genre
 # Book Recommender System
- This project is a book recommender system that uses Natural Language Processing (NLP) techniques to recommend books based on user input. It utilizes the TF-IDF (Term Frequency-Inverse Document Frequency) matrix and Nearest Neighbors model to find books similar to the user's input.
+ This project is a book recommender system that uses Natural Language Processing (NLP) techniques to recommend books based on user input in telegram bot. It utilizes the TF-IDF (Term Frequency-Inverse Document Frequency) matrix and Nearest Neighbors model to find books similar to the user's input.
 
 ## Data Loading and Preprocessing
 The project starts by loading a dataset of book summaries and genres from a CSV file. It then preprocesses the text data by converting it to lowercase, removing punctuation, tokenizing the text, lemmatizing words, and removing stop words using NLTK (Natural Language Toolkit) library.
@@ -22,3 +22,4 @@ recommend_book("A gripping tale of love and betrayal", "Romance", num_books=5)
 - nltk
 - scikit-learn
 - tqdm
+- aiogram
